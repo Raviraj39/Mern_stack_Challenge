@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import TransactionsTable from './components/TransactionsTable';
-import StatisticsBox from './components/StatisticsBox';
 import BarChart from './components/BarChart';
-import PieChart from './components/PieChart';
 
 const App = () => {
     const [selectedMonth, setSelectedMonth] = useState('03'); // Default to March
 
     return (
-        <div>
-            <h1>MERN Transactions Dashboard</h1>
+        <div style={{ padding: '20px' }}>
+            <h1>Bar Chart Dashboard</h1>
             <select
                 value={selectedMonth}
                 onChange={(e) => setSelectedMonth(e.target.value)}
@@ -27,10 +24,7 @@ const App = () => {
                 <option value="11">November</option>
                 <option value="12">December</option>
             </select>
-            <StatisticsBox selectedMonth={selectedMonth} />
-            <TransactionsTable selectedMonth={selectedMonth} />
             <BarChart selectedMonth={selectedMonth} />
-            <PieChart selectedMonth={selectedMonth} />
         </div>
     );
 };
